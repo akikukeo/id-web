@@ -1,0 +1,87 @@
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+/* ヘッダー */
+header {
+    background-color: #1f1f1f; /* ヘッダー背景色 */
+    color: #ffffff;           /* ヘッダー文字色 */
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 2rem;
+}
+/* フッター */
+footer {
+    background-color: #1f1f1f; /* フッター背景色 */
+    color: #ffffff;           /* フッター文字色 */
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); /* 軽い影 */
+}
+
+/* リスト */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #1e1e1e; /* リストアイテム背景色 */
+    color: #e0e0e0;           /* リストアイテム文字色 */
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;       /* 角丸 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 軽い影 */
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+li:hover {
+    background-color: #333333; /* ホバー時の背景色 */
+    transform: translateY(-2px); /* ホバー時に少し浮く */
+}
+
+/* リンク */
+a {
+    color: #64ffda;           /* 明るい緑のリンク色 */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* ホバー時に下線を追加 */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* 横と縦の線を重ねて一体化 */
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #333; /* 縦横の線 */
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+}
+th {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+td {
+    text-align: center;
+    color: #fff;
+}
+caption {
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}

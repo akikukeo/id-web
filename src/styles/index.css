@@ -1,0 +1,41 @@
+.sort-button {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.sort-button:hover {
+    background-color: #555;
+}
+/* 新しい順ボタン */
+#sort-new.active {
+    background-color: #64ffda; /* 押されたときの背景色 */
+    color: black; /* 押されたときの文字色 */
+}
+
+/* 古い順ボタン */
+#sort-old.active {
+    background-color: #64ffda; /* 押されたときの背景色 */
+    color: black; /* 押されたときの文字色 */
+}
+
+/* ボタンが未アクティブなときのスタイル */
+button:not(.active) {
+    background-color: #333; /* 通常の背景色 */
+    color: white; /* 通常の文字色 */
+}
+
+
+
+#clear-btn {
+    margin-left: 10px; /* 検索ボタンと間隔を開ける */
+    background-color: #333; /* クリアボタンの色 */
+    color: white; /* 文字色 */
+}
+
+#clear-btn:hover {
+    background-color: #555; /* ホバー時の色 */
+}
