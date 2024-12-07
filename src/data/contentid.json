@@ -1,0 +1,20 @@
+[
+    {
+        "author": "作者1",
+        "creator": "著作者1",
+        "uploadPlatform": "YouTube",
+        "title": "タイトル1",
+        "videoId": "abc123",
+        "url": "https://example.com/video1",
+        "registrationDate": "2024-12-07T10:15:30"
+    },
+    {
+        "author": "作者2",
+        "creator": "著作者2",
+        "uploadPlatform": "Vimeo",
+        "title": "タイトル2",
+        "videoId": "def456",
+        "url": "https://example.com/video2",
+        "registrationDate": "2024-11-15T12:45:00"
+    }
+]
