@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isNewOrder = true; // デフォルトは新しい順
 
     // JSONデータを取得
-    fetch('../src/data/contentid.json') // ファイルの相対パス
+    fetch('/src/data/contentid.json') // ファイルの相対パス
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTPエラー! ステータス: ${response.status}`);

@@ -11,7 +11,7 @@ function toHalfWidth(str) {
   }
   
   // JSONデータを取得
-  fetch('../src/data/contentid.json')
+  fetch('/src/data/contentid.json')
     .then(response => {
       if (!response.ok) {
         if (response.status === 404) {
