@@ -12,6 +12,23 @@ function toHalfWidth(str) {
   
   // JSONデータを取得
   fetch('/src/data/contentid.json')
+    .then(response => {
+      if (!response.ok) {
+        if (response.status === 404) {
+          console.error('File not found. Please check the path.');
+        }
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      displayResults(data);
+    })
+    .catch(error => {
+      console.error('Error fetching JSON:', error);
+      const resultsContainer = document.getElementById('results');
+      resultsContainer.innerHTML = '<p>Error loading data. Please try again later.</p>';
+    })
     .then(response => response.json())
     .then(data => {
       // 検索ボタンのイベントリスナー
