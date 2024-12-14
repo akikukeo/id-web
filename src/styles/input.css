@@ -1,0 +1,20 @@
+#messageContainer {
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    display: none; /* 初期状態では非表示 */
+  }
+  
+  #messageContainer.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block; /* 成功メッセージが表示されるとき */
+  }
+  
+  #messageContainer.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block; /* エラーメッセージが表示されるとき */
+  }
+  

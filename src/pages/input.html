@@ -4,40 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Static Site</title>
-    <link rel="stylesheet" href="src/styles/global.css">
-    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/input.css">
 </head>
 <body>
     <header>
-        <h1>JSONデータ取得サンプル</h1>
+        <h1>JSONデータ取得サンプル-input</h1>
     </header>
     <main>
-        <p><a href="src/pages/input.html">JSON入力ページへ</a></p>
-
+        <p><a href="../../index.html">メインページへ</a></p>
         <!-- <div>
             <input type="text" id="searchInput" placeholder="Search...">
             <button id="searchButton">Search</button>
             <button id="clearButton">Clear</button>
             <div id="results"></div>
         </div> -->
-        <input type="text" id="searchInput" placeholder="検索...">
-        <button id="searchButton">検索</button>
-        <button id="clearButton">クリア</button>
-        <div id="results">
-            <table>
-              <thead>
-                <tr>
-                  <th>タイトル</th>
-                  <th>登録日時</th>
-                  <th>制作者</th>
-                  <th>著作者</th>
-                  <th>プラットフォーム</th>
-                  <th>動画ID</th>
-                  <th>リンク</th>
-                </tr>
-              </thead>
-            <tbody></tbody>
-            </table>
+        <div>
+            <textarea id="jsonInput" rows="10" cols="50" placeholder="ここにJSONデータを入力してください"></textarea>
+            <br>
+            <button id="jsonSubmitButton">JSONを読み込む</button>
+            <!-- メッセージ表示用のコンテナ -->
+            <div id="messageContainer" class="error" style="display:none;"></div>
+            <div id="messageContainer" class=""></div>
+        </div>
+        <div>
+            <input type="text" id="searchInput" placeholder="検索...">
+            <button id="searchButton">検索</button>
+            <button id="clearButton">クリア</button>
+            <div id="results">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>タイトル</th>
+                      <th>登録日時</th>
+                      <th>制作者</th>
+                      <th>著作者</th>
+                      <th>プラットフォーム</th>
+                      <th>動画ID</th>
+                      <th>リンク</th>
+                    </tr>
+                  </thead>
+                <tbody></tbody>
+                </table>
+            </div>
         </div>
         <!-- <div>
             <h2>データ一覧</h2>
@@ -61,7 +71,6 @@
                         <th>制作者</th>
                         <th>著作者</th>
                         <th>プラットフォーム</th>
-                        
                         <th>動画ID</th>
                         <th>リンク</th>
                     </tr>
@@ -75,7 +84,7 @@
     <footer>
         <p>&copy; akikukeo</p>
     </footer>
-    <script type="module" src="src/scripts/idfetch.js"></script>
-    <script type="module" src="src/scripts/content-search.js"></script>
+    <script type="module" src="../scripts/idfetch-input.js"></script>
+    <script type="module" src="../scripts/content-search-input.js"></script>
 </body>
 </html>
