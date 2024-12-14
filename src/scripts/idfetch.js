@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
             // 各セルを作成し、テーブル行に追加
             row.innerHTML = `
                 <td>${registrationNumber}</td>
+                <td>${item.title}</td>
                 <td>${formattedDateTime}</td>
                 <td>${item.author}</td>
                 <td>${item.creator}</td>
                 <td>${item.uploadPlatform}</td>
-                <td>${item.title}</td>
                 <td>${item.videoId}</td>
                 <td><a href="${item.url}" target="_blank">視聴</a></td>
             `;
