@@ -12,11 +12,30 @@
         <h1>JSONデータ取得サンプル</h1>
     </header>
     <main>
-        <div>
+        <!-- <div>
             <input type="text" id="searchInput" placeholder="Search...">
             <button id="searchButton">Search</button>
             <button id="clearButton">Clear</button>
             <div id="results"></div>
+        </div> -->
+        <input type="text" id="searchInput" placeholder="検索...">
+        <button id="searchButton">検索</button>
+        <button id="clearButton">クリア</button>
+        <div id="results">
+            <table>
+              <thead>
+                <tr>
+                  <th>タイトル</th>
+                  <th>登録日時</th>
+                  <th>制作者</th>
+                  <th>著作者</th>
+                  <th>プラットフォーム</th>
+                  <th>動画ID</th>
+                  <th>リンク</th>
+                </tr>
+              </thead>
+            <tbody></tbody>
+            </table>
         </div>
         <!-- <div>
             <h2>データ一覧</h2>
@@ -35,11 +54,12 @@
                 <thead>
                     <tr>
                         <th>登録順</th>
+                        <th>タイトル</th>
                         <th>登録日時</th>
                         <th>制作者</th>
                         <th>著作者</th>
                         <th>プラットフォーム</th>
-                        <th>タイトル</th>
+                        
                         <th>動画ID</th>
                         <th>リンク</th>
                     </tr>

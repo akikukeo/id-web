@@ -9,6 +9,19 @@ function highlightMatch(text, query) {
   return text.replace(regex, (match) => `<span style="font-weight: bold;">${match}</span>`);
 }
 
+// 日付を日本語表記に変換する関数
+function formatDateToJapanese(dateString) {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+  return `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
+}
+
+
 // リポジトリベースパスを取得
 const basePath = `/${window.location.pathname.split('/')[1]}`;
 
@@ -52,33 +65,33 @@ fetch(`src/data/contentid.json`)
     resultsContainer.innerHTML = '<p>Error loading data. Please try again later.</p>';
   });
 
-// 検索結果を表示する関数
-function displayResults(results, query = '') {
-  const resultsContainer = document.getElementById('results');
-  resultsContainer.innerHTML = ''; // 既存の内容をクリア
-
-  if (results.length === 0) {
-    resultsContainer.innerHTML = '<p>No results found.</p>';
-  } else {
-    results.forEach(item => {
-      const itemElement = document.createElement('div');
-
-      // ハイライト処理
-      const highlightedTitle = highlightMatch(item.title, query);
-      const highlightedAuthor = highlightMatch(item.author, query);
-      const highlightedCreator = highlightMatch(item.creator, query);
-      const highlightedPlatform = highlightMatch(item.uploadPlatform, query);
-
-      itemElement.innerHTML = `
-        <h3>${highlightedTitle}</h3>
-        <p>登録日時: ${(item.registrationDate)}</p>
-        <p>制作者: ${highlightedAuthor}</p>
-        <p>著作者: ${highlightedCreator}</p>
-        <p>プラットフォーム: ${highlightedPlatform}</p>
-        <p>動画ID: ${item.videoId}</p>
-        <p><a href="${item.url}" target="_blank">「${item.uploadPlatform}」で視聴</a></p>
-      `;
-      resultsContainer.appendChild(itemElement);
-    });
+  function displayResults(results, query = '') {
+    const resultsTableBody = document.querySelector('#results table tbody');
+    resultsTableBody.innerHTML = ''; // 既存の内容をクリア
+  
+    if (results.length === 0) {
+      resultsTableBody.innerHTML = '<tr><td colspan="7">No results found.</td></tr>';
+    } else {
+      results.forEach(item => {
+        const row = document.createElement('tr');
+  
+        // ハイライト処理
+        const highlightedTitle = highlightMatch(item.title, query);
+        const highlightedAuthor = highlightMatch(item.author, query);
+        const highlightedCreator = highlightMatch(item.creator, query);
+        const highlightedPlatform = highlightMatch(item.uploadPlatform, query);
+  
+        row.innerHTML = `
+          <td>${highlightedTitle}</td>
+          <td>${formatDateToJapanese(item.registrationDate)}</td>
+          <td>${highlightedAuthor}</td>
+          <td>${highlightedCreator}</td>
+          <td>${highlightedPlatform}</td>
+          <td>${item.videoId}</td>
+          <td><a href="${item.url}" target="_blank">視聴</a></td>
+        `;
+        resultsTableBody.appendChild(row);
+      });
+    }
   }
-}
+  
